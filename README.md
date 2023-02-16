@@ -73,7 +73,7 @@ If **b**'s head is neither curdiff or the next curdiff, the program looks throug
 
 I also have a little buffer zone nicknamed **down** at the bottom of **a** where values that are neither the curdiff or next curdiff can be stored in ascending order
 
-###Results
+### Results
 
 A full marks evaluation requires:
 | Stack Size | Evaluation Limit | My Average | 
