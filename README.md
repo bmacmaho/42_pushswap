@@ -37,6 +37,8 @@ Next, we need to take these inputs and store them in some sort of data structure
 
 There is also the t_pushswap struct 'pushswap' which contains pointers to the heads of these lists, pointers to the ends, and some other variables that are used frequently in the rest of the project. I find that having one some-what global struct declared in the main really cleans up the code. It makes it easier to follow the flow of the project, as I don't have to pass loads of arguments to every function, just 'pushswap'. Then I can deal with it's contained variables within each function.
 
+The goal is not to have the algorithm with the best time or space complexity, but instead to write the algorithm that uses *the least operations*. Therefore, we can essentially sort the inputs innefficiently before actually beginning the algorithm, and then figure out what the optimal moves are to get to a sorted array.
+
 ### The 'diff' variable
 The **diff** represents how far a number is to the middle of the sorted array. If it's positive, it's between the middle and the end. If it's negative, it's between the start and middle.
 
@@ -50,13 +52,17 @@ In this example, <br>
 - 2's diff is -2, because it is greater than one item (1) but less than three items (3, 4 & 5), ie, -1 + 3 = -2.<br>
 - 3's diff is 0, because it has the same amount of values greater than it as it does less than.
 
+Here's another example,
+| Values: | 5 | 2 | 7 | 8 | 0 | 9 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Diff: | -1 | -3 | 1 | 3 | -5 | 5 |
+
 ### A → B
 'n' is a variable that decides the size of each chunk sent to b. If the amount of inputs is less than 150, n = 8. If greater, n = 18. I should really have a function that determines the optimal 'n' depending on the amount of inputs instead of hard-coding them, but for now these work well.
 
-curdiff is the ceiling 'diff' as we move values from A → B. Its initial value is n * 2. If the absolute value of an input's diff is less than 'curdiff' then we push it to B. If A no longer contains a value that fits in the chunk, we increase 'curdiff'.Then if the diff is negative, we rotate B. As seen in the video below, this means that we get the middle values into B first, and in an approximate order, get the values further from the centre.
+curdiff is the ceiling 'diff' as we move values from A → B, which is dependant on n. If the absolute value of an input's diff is less than 'curdiff' then we push it to B. Then if the diff is negative, we rotate B. If A no longer contains a value that fits in the chunk, we increase 'curdiff'. As seen in the video below, this means that we get the middle values into B first, and then in approximate order, get the values further from the centre.
 
 [Screencast from 02-16-2023 01 02 36 AM (online-video-cutter.com)(2).webm](https://user-images.githubusercontent.com/118922473/219409373-f24d9691-d2ff-4c5d-a4dc-b02f3b3a8a5b.webm)
 
 ### A ← B
 
-The goal is not to have the algorithm with the best time or space complexity, but instead to write the algorithm that uses *the least operations*.
