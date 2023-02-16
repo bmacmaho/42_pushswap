@@ -66,8 +66,8 @@ curdiff is the ceiling 'diff' as we move values from A → B, which is dependant
 
 ### A ← B
 
-Now that we have our values in b roughly sorted, the second half of the algorithm begins.
-Firstly, I essentially find the max value by looking through **b** for the highest diff. This maximum diff is then stored in **curdiff**. If the head of b is **curdiff** then we **pa**. I also check if **b**'s head is the next max diff to curdiff and **pa** is it would just require **sa**ing to get it in place after we find curdiff.
+Now that we have our values in **b** roughly sorted, the second half of the algorithm begins.
+Firstly, I essentially find the max value by looking through **b** for the highest diff. This maximum diff is then stored in **curdiff**. If the head of b is **curdiff** then we **pa**. I also check if **b**'s head is the next max diff to curdiff (curdiff - 2) and **pa** is it would just require **sa**ing to get it in place after we find curdiff.
 
 If **b**'s head is neither curdiff or the next curdiff, the program looks through b looking for the location of **curdiff**, and determines if **rb** or **rrb** would be the better move.
 
