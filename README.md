@@ -24,7 +24,14 @@ The operations are as followed...
 
 ## Approach
 ### Input Error Handling
-Before we can get stuck in with the funky algorithms
+Before we can get stuck in with the sorting algorithms, it is first necessary to insure that the program is receiving valid inputs.
+For example,
+- Inputs must be numeric.
+- Inputs cannot be repeated.
+- Inputs must be within the range of an int.
+
+To check if each value is in the range of an int, I made use of the 'ft_strncmp' function from libft.
+
 ### Preparing Stacks
 ### The 'diff' variable
 The **diff** represents how far a number is to the middle of the sorted array. If it's positive, it's between the middle and the end. If it's negative, it's between the start and middle.
