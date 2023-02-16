@@ -72,3 +72,13 @@ Firstly, I essentially find the max value by looking through **b** for the highe
 If **b**'s head is neither curdiff or the next curdiff, the program looks through b looking for the location of **curdiff**, and determines if **rb** or **rrb** would be the better move.
 
 I also have a little buffer zone nicknamed **down** at the bottom of **a** where values that are neither the curdiff or next curdiff can be stored in ascending order
+
+###Results
+
+A full marks evaluation requires:
+| Stack Size | Evaluation Limit | My Average | 
+| --- | --- | --- |
+| 3 | 3 | 2 |
+| 5 | 12 | 8 |
+| 100 | 700 | 600 |
+| 500 | 5.5k | 4.7k |
