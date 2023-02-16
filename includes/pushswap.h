@@ -36,8 +36,6 @@ typedef struct s_pushswap
 	int				alen;
 	int				blen;
 	int				n;
-	int				mid;
-	int				offset;
 	int				curdiff;
 	int				down;
 }				t_pushswap;
