@@ -28,11 +28,9 @@ static int	ft_isargabunchofzeroes(char *arg)
 }
 
 static int	ft_isargint(char *arg)
-{
+{	
 	size_t	len;
-	size_t	i;
 
-	i = 0;
 	len = ft_strlen(arg);
 	if (len > 11)
 		return (-1);
